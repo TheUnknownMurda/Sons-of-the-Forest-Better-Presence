@@ -1,0 +1,13 @@
+{
+  "id": "SotFRPC",
+  "name": "SotF Discord Presence",
+  "author": "TheUnknownMurda",
+  "version": "1.1.0",
+  "description": "Exporte l'état de la partie (jour, saison, météo, vitals, lieu, objet en main, joueurs) pour la Rich Presence Discord.",
+  "gameVersion": "",
+  "loaderVersion": "",
+  "platform": "Client",
+  "type": "Mod",
+  "url": "",
+  "dependencies": []
+}

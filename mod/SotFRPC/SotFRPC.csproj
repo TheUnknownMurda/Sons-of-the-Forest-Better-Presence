@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Mod RedLoader : compile contre les assemblies d'interop générées par RedLoader dans le dossier du jeu.
+       Autre emplacement du jeu : dotnet build -c Release -p:GamePath="D:\...\Sons Of The Forest"
+       (ou mod\install.ps1 -Build, qui trouve le jeu tout seul).
+       manifest.json n'est pas intégré à la DLL : RedLoader le lit dans Mods\SotFRPC\manifest.json (copié par install.ps1). -->
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>SotFRPC</AssemblyName>
+    <RootNamespace>SotFRPC</RootNamespace>
+    <Version>1.1.0</Version>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <DebugType>none</DebugType>
+    <NoWarn>$(NoWarn);MSB3270;CS0618</NoWarn>
+    <GamePath Condition="'$(GamePath)' == ''">E:\SteamLibrary\steamapps\common\Sons Of The Forest</GamePath>
+    <RedLoaderDir>$(GamePath)\_Redloader</RedLoaderDir>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <Reference Include="$(RedLoaderDir)\net6\RedLoader.dll" Private="false" />
+    <Reference Include="$(RedLoaderDir)\net6\SonsSdk.dll" Private="false" />
+    <Reference Include="$(RedLoaderDir)\net6\0Harmony.dll" Private="false" />
+    <Reference Include="$(RedLoaderDir)\net6\Il2CppInterop.Runtime.dll" Private="false" />
+    <Reference Include="$(RedLoaderDir)\net6\Il2CppInterop.Common.dll" Private="false" />
+    <Reference Include="$(RedLoaderDir)\Game\*.dll" Exclude="$(RedLoaderDir)\Game\Newtonsoft.Json.dll" Private="false" />
+  </ItemGroup>
+
+</Project>

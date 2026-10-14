@@ -1,0 +1,22 @@
+{
+  "client_id": "1080279445153263686",
+  "language": "auto",
+  "timer": "game",
+  "clock_mode": "exact",
+  "state_rotation": ["activity", "vitals", "activity", "stats", "activity", "companions"],
+  "status_display": "name",
+  "rotate_seconds": 20,
+  "vitals_format": "percent",
+  "place_radius_m": 150,
+  "show_region": true,
+  "show_held_item": true,
+  "show_position": false,
+  "area_names": {},
+  "place_names": {},
+  "buttons": [
+    {
+      "label": "Sons of the Forest sur Steam",
+      "url": "https://store.steampowered.com/app/1326470/"
+    }
+  ]
+}
